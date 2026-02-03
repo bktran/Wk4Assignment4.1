@@ -33,19 +33,28 @@ namespace Wk4Assignment4._1
                 Person person = new Person();
                 person.FirstName = txtFirst.Text;
                 person.LastName = txtLast.Text;
-                bool hasMobile = long.TryParse(txtMobile.Text, out long mobile);
-                bool hasWork = long.TryParse(txtWork.Text, out long work);
-                if (hasMobile)
+
+                bool hasMobile = true;
+                bool hasWork = true;
+
+                long mobile = 0;
+                long work = 0;
+
+                if (!string.IsNullOrWhiteSpace(txtMobile.Text))
+                    hasMobile = long.TryParse(txtMobile.Text, out mobile);
+
+                if (!string.IsNullOrWhiteSpace(txtWork.Text))
+                    hasWork = long.TryParse(txtWork.Text, out work);
+
+                if (!hasMobile || !hasWork)
                 {
-                    person.Mobile = mobile;
+                    MessageBox.Show("Phone numbers must be numerical values!!");
+                    return;
                 }
-                else if (hasWork) 
-                {
-                    person.Work = work;
-                }
+
                 person.Address = txtAddress.Text;
 
-                PhoneBook.Contacts.Add(person.FirstName + person.LastName, person);
+                PhoneBook.Contacts.Add(person.FirstName.ToLower() + person.LastName.ToLower(), person);
                 MessageBox.Show("Contact Added!");
                 
                 this.Close();

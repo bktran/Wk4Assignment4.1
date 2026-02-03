@@ -32,7 +32,7 @@
             btnAdd = new Button();
             btnDelete = new Button();
             btnSearch = new Button();
-            textBox1 = new TextBox();
+            txtSearch = new TextBox();
             label1 = new Label();
             btnRefresh = new Button();
             ((System.ComponentModel.ISupportInitialize)dgAll).BeginInit();
@@ -43,7 +43,7 @@
             dgAll.BackgroundColor = SystemColors.GradientActiveCaption;
             dgAll.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgAll.Location = new Point(54, 72);
-            dgAll.Margin = new Padding(4, 4, 4, 4);
+            dgAll.Margin = new Padding(4);
             dgAll.Name = "dgAll";
             dgAll.Size = new Size(614, 272);
             dgAll.TabIndex = 0;
@@ -52,7 +52,7 @@
             // 
             btnAdd.BackColor = Color.FromArgb(128, 255, 128);
             btnAdd.Location = new Point(54, 370);
-            btnAdd.Margin = new Padding(4, 4, 4, 4);
+            btnAdd.Margin = new Padding(4);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(144, 45);
             btnAdd.TabIndex = 1;
@@ -64,7 +64,7 @@
             // 
             btnDelete.BackColor = Color.Red;
             btnDelete.Location = new Point(247, 370);
-            btnDelete.Margin = new Padding(4, 4, 4, 4);
+            btnDelete.Margin = new Padding(4);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(144, 45);
             btnDelete.TabIndex = 2;
@@ -75,22 +75,23 @@
             // btnSearch
             // 
             btnSearch.BackColor = Color.Silver;
-            btnSearch.Location = new Point(450, 370);
-            btnSearch.Margin = new Padding(4, 4, 4, 4);
+            btnSearch.Location = new Point(441, 370);
+            btnSearch.Margin = new Padding(4);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(144, 45);
+            btnSearch.Size = new Size(218, 45);
             btnSearch.TabIndex = 3;
-            btnSearch.Text = "Search by name";
+            btnSearch.Text = "Search by First Name";
             btnSearch.UseVisualStyleBackColor = false;
+            btnSearch.Click += btnSearch_Click;
             // 
-            // textBox1
+            // txtSearch
             // 
-            textBox1.BackColor = SystemColors.Info;
-            textBox1.Location = new Point(367, 423);
-            textBox1.Margin = new Padding(4, 4, 4, 4);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(301, 27);
-            textBox1.TabIndex = 4;
+            txtSearch.BackColor = SystemColors.Info;
+            txtSearch.Location = new Point(393, 423);
+            txtSearch.Margin = new Padding(4);
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new Size(301, 27);
+            txtSearch.TabIndex = 4;
             // 
             // label1
             // 
@@ -107,12 +108,13 @@
             // 
             btnRefresh.BackColor = SystemColors.Highlight;
             btnRefresh.Location = new Point(180, 34);
-            btnRefresh.Margin = new Padding(4, 4, 4, 4);
+            btnRefresh.Margin = new Padding(4);
             btnRefresh.Name = "btnRefresh";
             btnRefresh.Size = new Size(158, 30);
             btnRefresh.TabIndex = 6;
             btnRefresh.Text = "Refresh Contacts";
             btnRefresh.UseVisualStyleBackColor = false;
+            btnRefresh.Click += btnRefresh_Click;
             // 
             // Form1
             // 
@@ -121,13 +123,13 @@
             ClientSize = new Size(707, 481);
             Controls.Add(btnRefresh);
             Controls.Add(label1);
-            Controls.Add(textBox1);
+            Controls.Add(txtSearch);
             Controls.Add(btnSearch);
             Controls.Add(btnDelete);
             Controls.Add(btnAdd);
             Controls.Add(dgAll);
             Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
@@ -142,7 +144,7 @@
         private Button btnAdd;
         private Button btnDelete;
         private Button btnSearch;
-        private TextBox textBox1;
+        private TextBox txtSearch;
         private Label label1;
         private Button btnRefresh;
     }
