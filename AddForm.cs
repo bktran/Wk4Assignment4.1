@@ -37,8 +37,8 @@ namespace Wk4Assignment4._1
                 bool hasMobile = true;
                 bool hasWork = true;
 
-                long mobile = long.TrailingZeroCount(9);
-                long work = long.TrailingZeroCount(9);
+                long mobile = 0;
+                long work = 0;
 
                 if (!string.IsNullOrWhiteSpace(txtMobile.Text))
                 {

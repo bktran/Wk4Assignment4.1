@@ -80,7 +80,7 @@
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(218, 45);
             btnSearch.TabIndex = 3;
-            btnSearch.Text = "Search by First Name";
+            btnSearch.Text = "Search by Name";
             btnSearch.UseVisualStyleBackColor = false;
             btnSearch.Click += btnSearch_Click;
             // 
