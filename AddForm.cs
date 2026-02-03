@@ -37,14 +37,20 @@ namespace Wk4Assignment4._1
                 bool hasMobile = true;
                 bool hasWork = true;
 
-                long mobile = 0;
-                long work = 0;
+                long mobile = long.TrailingZeroCount(9);
+                long work = long.TrailingZeroCount(9);
 
                 if (!string.IsNullOrWhiteSpace(txtMobile.Text))
+                {
                     hasMobile = long.TryParse(txtMobile.Text, out mobile);
+                    person.Mobile = mobile;
+                }
 
                 if (!string.IsNullOrWhiteSpace(txtWork.Text))
+                { 
                     hasWork = long.TryParse(txtWork.Text, out work);
+                    person.Work = work;
+                } 
 
                 if (!hasMobile || !hasWork)
                 {
